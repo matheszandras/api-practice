@@ -10,7 +10,7 @@ import java.util.List;
 public class GetBookingIdTest {
     @Test
     public void GetBookingIdsWithoutFilterTest() {
-        Response response = RestAssured.get("https://restful-booker.herokuapp.com/booking");
+        Response response = RestAssured.get("http://localhost:3001/booking/5");
         response.print();
 
         Assert.assertEquals(response.getStatusCode(), 200, "Status code should be 200 but it isn't");

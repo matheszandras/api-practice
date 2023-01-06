@@ -7,7 +7,7 @@ import static io.restassured.RestAssured.given;
 public class HealthCheckTest {
     @Test
     public void HealthChackTest() {
-        given().when().get("https://restful-booker.herokuapp.com/ping")
+        given().when().get("http://localhost:3001/ping")
                 .then().assertThat().statusCode(201);
 
 
