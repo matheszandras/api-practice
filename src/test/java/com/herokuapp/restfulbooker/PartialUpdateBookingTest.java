@@ -7,9 +7,7 @@ import org.json.JSONObject;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
-import static com.herokuapp.restfulbooker.CreateBooking.createBooking;
-
-public class PartialUpdateBookingTest {
+public class PartialUpdateBookingTest extends BaseTest {
 
     @Test
     public void PartialUpdateBookingTest() {

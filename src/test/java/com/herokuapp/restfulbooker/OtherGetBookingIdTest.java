@@ -6,10 +6,12 @@ import org.testng.Assert;
 import org.testng.annotations.Test;
 import org.testng.asserts.SoftAssert;
 
-public class OtherGetBookingIdTest {
+public class OtherGetBookingIdTest extends BaseTest {
     @Test
     public void OtherGetBooking() {
-        Response response = RestAssured.get("http://localhost:3001/booking/5");
+        spec.pathParam("bookingId",5);
+        Response response = RestAssured.given(spec).get("booking/{bookingId}");
+
         response.prettyPrint();
 
         SoftAssert softAssert = new SoftAssert();

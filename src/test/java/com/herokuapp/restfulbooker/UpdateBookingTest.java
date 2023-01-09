@@ -7,9 +7,7 @@ import org.json.JSONObject;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
-import static com.herokuapp.restfulbooker.CreateBooking.createBooking;
-
-public class UpdateBookingTest {
+public class UpdateBookingTest extends BaseTest {
 
     @Test
     public void UpdateBookingTest() {
@@ -31,7 +29,7 @@ public class UpdateBookingTest {
 
         body.put("additionalneeds", "uranium, 41st field artillery regiment");
 
-        Response responseUpdate = RestAssured.given().auth().preemptive().basic("admin","password123").contentType(ContentType.JSON).
+        Response responseUpdate = RestAssured.given().auth().preemptive().basic("admin", "password123").contentType(ContentType.JSON).
                 body(body.toString()).put("http://localhost:3001/booking/" + bookingId);
         responseUpdate.prettyPrint();
 
@@ -45,5 +43,4 @@ public class UpdateBookingTest {
         Assert.assertEquals(responseUpdate.jsonPath().get("bookingdates.checkout"), "2030-12-31", "checkout date is not as expected");
         Assert.assertEquals(responseUpdate.jsonPath().get("additionalneeds"), "uranium, 41st field artillery regiment", "additional needs are not as expected");
     }
-
 }

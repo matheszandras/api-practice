@@ -5,10 +5,7 @@ import io.restassured.response.Response;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
-import static com.herokuapp.restfulbooker.CreateBooking.createBooking;
-
-public class DeleteBookingTest {
-
+public class DeleteBookingTest extends BaseTest{
     @Test
     public void DeleteBookingTest() {
 
