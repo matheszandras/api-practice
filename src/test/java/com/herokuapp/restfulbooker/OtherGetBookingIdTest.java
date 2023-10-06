@@ -29,7 +29,7 @@ public class OtherGetBookingIdTest extends BaseTest {
         String actualCheckOut = response.jsonPath().get("bookingdates.checkout");
         Assert.assertEquals(actualCheckOut, "2022-05-31", "Checkout date is not as expected");
 
-        Assert.assertEquals(response.jsonPath().get("additionalneeds"), "Breakfast", "Additipnal needs is not as expected");
+        Assert.assertEquals(response.jsonPath().get("additionalneeds"), "Breakfast", "Additional needs is not as expected");
 
         softAssert.assertAll();
     }

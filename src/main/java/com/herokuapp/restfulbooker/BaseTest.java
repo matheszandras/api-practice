@@ -13,7 +13,7 @@ public class BaseTest {
 
     @BeforeMethod
     public void setup() {
-        spec = new RequestSpecBuilder().setBaseUri("http://localhost:3001/").build();
+        spec = new RequestSpecBuilder().setBaseUri("https://restful-booker.herokuapp.com/").build();
     }
 
     protected Response createBooking() {
@@ -29,7 +29,6 @@ public class BaseTest {
         body.put("bookingdates", bookingDates);
 
         body.put("additionalneeds", "uranium, 41st field artillery regiment");
-
 
         Response response = RestAssured.given(spec).contentType(ContentType.JSON).body(body.toString()).post("booking");
         return response;

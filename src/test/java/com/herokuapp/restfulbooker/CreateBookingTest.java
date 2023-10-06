@@ -8,7 +8,7 @@ import org.testng.annotations.Test;
 
 public class CreateBookingTest extends BaseTest {
 
-    //@Test
+    @Test
     public void CreateBookingTest() {
 
         Response response = createBooking();

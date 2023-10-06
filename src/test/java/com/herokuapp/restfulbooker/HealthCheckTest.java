@@ -12,7 +12,7 @@ import static io.restassured.RestAssured.given;
 
 public class HealthCheckTest extends BaseTest {
     @Test
-    public void HealthChackTest() {
+    public void HealthCheckTest() {
         given().spec(spec).when().get("ping")
                 .then().assertThat().statusCode(201);
 
